@@ -1,0 +1,71 @@
+<div class="displayStyle display">
+        <label>Please select any one of the following, as applicable:</label>
+        <br>
+        
+            <div class="row">
+                <span class="col-lg-1 col-md-1" style="padding-right: 0px">
+                    <input type="hidden" name="_indicative_36"><input type="checkbox" name="indicative_36" data-text="The session you conducted on the Topic ______, on <date> was really interesting and helpful/thought provoking. You presented complex ideas in a simple way by explaining ________________________." style="height: 15px" id="indicative_36">
+                </span>
+                <span class="col-lg-11 col-md-11" style="padding-left: 0px;vertical-align: middle">
+                    The session you conducted on the Topic ______, on &lt;date&gt; was really interesting and helpful/thought provoking. You presented complex ideas in a simple way by explaining ________________________.
+                </span>
+            </div>
+        
+            <div class="row">
+                <span class="col-lg-1 col-md-1" style="padding-right: 0px">
+                    <input type="hidden" name="_indicative_37"><input type="checkbox" name="indicative_37" data-text="The session you conducted on the Topic ______, on <date> was really interesting and helpful/thought provoking. Your session really helped me apply the knowledge on the job. Referring to ________________." style="height: 15px" id="indicative_37">
+                </span>
+                <span class="col-lg-11 col-md-11" style="padding-left: 0px;vertical-align: middle">
+                    The session you conducted on the Topic ______, on &lt;date&gt; was really interesting and helpful/thought provoking. Your session really helped me apply the knowledge on the job. Referring to ________________.
+                </span>
+            </div>
+        
+            <div class="row">
+                <span class="col-lg-1 col-md-1" style="padding-right: 0px">
+                    <input type="hidden" name="_indicative_38"><input type="checkbox" name="indicative_38" data-text="The session you conducted on the Topic ______, on <date> was really interesting and helpful/thought provoking. Your session was truly worth the time I devoted. I really liked the way you presented the application aspect of the concept of __________." style="height: 15px" id="indicative_38">
+                </span>
+                <span class="col-lg-11 col-md-11" style="padding-left: 0px;vertical-align: middle">
+                    The session you conducted on the Topic ______, on &lt;date&gt; was really interesting and helpful/thought provoking. Your session was truly worth the time I devoted. I really liked the way you presented the application aspect of the concept of __________.
+                </span>
+            </div>
+        
+            <div class="row">
+                <span class="col-lg-1 col-md-1" style="padding-right: 0px">
+                    <input type="hidden" name="_indicative_39"><input type="checkbox" name="indicative_39" data-text="The session you conducted on the Topic ______, on <date> was really interesting and helpful/thought provoking. <The topic you covered> is a new development which not many people were aware of. You helped us understand the ________________." style="height: 15px" id="indicative_39">
+                </span>
+                <span class="col-lg-11 col-md-11" style="padding-left: 0px;vertical-align: middle">
+                    The session you conducted on the Topic ______, on &lt;date&gt; was really interesting and helpful/thought provoking. &lt;The topic you covered&gt; is a new development which not many people were aware of. You helped us understand the ________________.
+                </span>
+            </div>
+        
+            <div class="row">
+                <span class="col-lg-1 col-md-1" style="padding-right: 0px">
+                    <input type="hidden" name="_indicative_40"><input type="checkbox" name="indicative_40" data-text="The session you conducted on the Topic ______, on <date> was really interesting and helpful/thought provoking. I really needed help on _________________ Project/Module and your time helped me achieve it." style="height: 15px" id="indicative_40">
+                </span>
+                <span class="col-lg-11 col-md-11" style="padding-left: 0px;vertical-align: middle">
+                    The session you conducted on the Topic ______, on &lt;date&gt; was really interesting and helpful/thought provoking. I really needed help on _________________ Project/Module and your time helped me achieve it.
+                </span>
+            </div>
+        
+            <div class="row">
+                <span class="col-lg-1 col-md-1" style="padding-right: 0px">
+                    <input type="hidden" name="_indicative_58"><input type="checkbox" name="indicative_58" data-text="Add your own comments." style="height: 15px" id="indicative_58">
+                </span>
+                <span class="col-lg-11 col-md-11" style="padding-left: 0px;vertical-align: middle">
+                    Add your own comments.
+                </span>
+            </div>
+        
+        <script>
+            $(document).ready(function () {
+                $("input[type='checkbox']").click(function () {
+                    if (this.checked) {
+                        var indicative = $(this).attr("data-text");
+                        var htmlText = '<textarea id="textareaReason" name="reason" style="resize: none;height: 140px;">' + indicative + '</textarea>';
+                        $('div .display').html(htmlText);
+                        $(".display").removeClass('displayStyle')
+                    }
+                })
+            });
+        </script>
+    </div>
