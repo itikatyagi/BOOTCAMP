@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Registration Reap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon-c06e02ee158e94e25e754cb87a2328fd.ico" type="image/x-icon">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css1/reg.css">
+<link rel="stylesheet" href="css1/form-elements.css">
+</head>
+<body style="background-image:url(1.jpg)">
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["inputName"].value;
+    var y = document.forms["myForm"]["inputEmail"].value;
+    var z = document.forms["myForm"]["inputType"].value;
+    var a = document.forms["myForm"]["inputMobile"].value;
+    var at="@";
+    var dot=".";
+    var lat=y.indexOf(at);
+    var lstr=y.length;
+	var ldot=y.indexOf(dot);
+    if (x.trim() == "") {
+    alert("Name must be filled out");
+	}
+    else if (y.indexOf(at)==-1){ 
+	alert("Invalid E-mail ID");
+	}
+    else if (y.indexOf(at)==-1 || y.indexOf(at)==0 || y.indexOf(at)==lstr){
+    alert("Invalid E-mail ID");
+    }
+    else if (y.indexOf(dot)==-1 || y.indexOf(dot)==0 || y.indexOf(dot)==lstr){
+    alert("Invalid E-mail ID");
+	}
+    else if (y.indexOf(at,(lat+1))!=-1){
+    alert("Invalid E-mail ID");
+	}
+    else if (y.substring(lat-1,lat)==dot || y.substring(lat+1,lat+2)==dot){
+    alert("Invalid E-mail ID");
+     }
+    else if (y.indexOf(dot,(lat+2))==-1){
+    alert("Invalid E-mail ID");
+    }
+	else if (y.indexOf(" ")!=-1){
+    alert("Invalid E-mail ID");
+     }
+    else if(z.trim() == ""){
+	alert("Enter ur employee id");
+	 }
+	else if(a.trim() == ""){
+    alert("Please Enter Your Mobile Number");
+     }
+    else if(a.length != 10) {
+    alert("Phone number must be 10 digits.");
+	}
+	return false;
+    }
+	</script>
+	<div class="top-content">
+    <div class="inner-bg">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text">
+    <h1><strong>Registration FORM</strong> </h1>
+    </div></div></div>
+	<div class ="col-xs-12">
+    <form style=" margin:auto; width:auto" name="myForm" class="form-horizontal"  onsubmit="return validateForm()"  method="post">
+    <div class="form-group">
+	  <div class ="row">
+      <label for="inputType" class=" col-xs-3 control-label">Employee Id</label>
+     <input type="text" class="col-xs-6 " id="inputType" placeholder="Employee ID">
+     </div></div>
+     <div class="form-group">
+	 <div class="row">
+     <label for="inputName" class="col-xs-3 control-label">Newer Name</label>
+     <input type="text" class="col-xs-6 " id="inputName" placeholder="Newer Name">
+    </div></div>
+	 <div class="form-group">
+	 <div class ="row">
+     <label for="inputEmail" class="col-xs-3 control-label">E-mail ID</label>
+     <input type="text" class="col-xs-6 " id="inputEmail" placeholder="E-mail ID">
+     </div></div>
+	 <div class="form-group">
+	 <div class ="row">
+     <label for="inputMobile" class="col-xs-3 control-label">Mobile Number</label>
+     <input type="text" class="col-xs-6 " id="inputMobile" placeholder="Mobile Number">
+     </div></div>
+    <div class="form-group">
+	<div class ="row">
+    <label for ="role" class ="col-xs-3 control-label">Role</label>
+    <select class="col-xs-6 control-label"   id="role"  name="select">
+	<option value="user"> User </option>
+	<option value="supervisor"> Supervisor </option>
+	<option value="practicehead"> Practice Head </option>
+	<option value="admin"> Admin </option>
+    </select>
+    </div> </div>
+	<div class="form-group">
+    <div class ="row">
+    <label for ="inputServiceLines" class ="col-xs-3 control-label">SERVICE LINES</label>
+	<select class="col-xs-6 control-label"   id="inputServiceLines" name="select">
+    <option value="analytics"> Analytics </option>
+	<option value="Analytics-SEA"> Analytics-SEA</option>
+	<option value="Digital Marketing"> Digital Marketing</option>
+	<option value="Digital Marketing-INDIA"> Digital Marketing-INDIA </option>
+    <option value="Digital Marketing-SEA"> Digital Marketing-SEA </option>
+    <option value="Technology"> Technology </option>
+    <option value="ThoughtBuzz India"> ThoughtBuzz INDIA </option>
+	<option value="TTND-Intern"> TTND-Intern </option>
+	<option value="TTND-SEA"> TTND-SEA</option>
+	<option value="TTNV"> TTNV</option>
+    <option value="Video Solutions"> Video Solutions </option>
+    </select></div> </div>
+	<div class="form-group">
+	<div class ="row">
+    <label for ="inputPractices" class ="col-xs-3 control-label">PRACTICES</label>
+	<select class="col-xs-6 control-label"   id="inputPractices" name="select">
+									   <option value="user"> Admin </option>
+									   <option value="user"> AMC </option>
+									   <option value="user"> Analytics </option>
+									   <option value="supervisor"> Analytics-SEA</option>
+									   <option value="user"> BigData </option>
+									   <option value="user"> BlogMint </option>
+									   <option value="practicehead"> Business Development</option>
+									   <option value="admin"> Creative</option>
+									   
+									   <option value="admin"> Design </option>
+									   <option value="admin"> DevOps </option>
+									   <option value="admin">DM India CORPORATE </option>
+									   <option value="admin"> Drupal </option>
+									   <option value="admin"> Feen</option>
+									   <option value="admin">Finance</option>
+									   <option value="admin"> HR </option>
+									   <option value="user"> Intern </option>
+									   <option value="user">IT </option>
+									   <option value="user"> JVM </option>
+									   <option value="user"> MARTECH </option>
+									   <option value="user">Mean</option>
+									   <option value="user"> Media Planning & Buying </option>
+									   <option value="user"> Mobility </option>
+									   <option value="user"> Sales & Marketing </option>
+									   <option value="user"> Security </option>
+									   <option value="user"> Shared Services-SEA</option>
+									   <option value="user"> Social Media </option>
+									   <option value="user"> Social Media Marketing </option>
+									   <option value="user"> Social Media-SEA </option>
+									   <option value="user"> Technology Corporate </option>
+									   <option value="user">Testing </option>
+									  
+									   <option value="user"> TTN Overheads </option>
+									    <option value="user"> TTNVManagement</option>
+									   </select>
+                                     </div>
+                                </div>
+</div>
+
+  </br></br>
+ 
+<div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <button type="submit" class=" btn btn-danger btn-block" value="SUBMIT">SUBMIT</button>
+                            </div>
+							
+                        </div></form>
+						</div>
+						</div>
+						</div></div></div>
+
+ <script src="js\jquery-1.11.1.min.js"></script>
+ 
+       
+        
+  
+        
+ 
+</body>
+</html>
