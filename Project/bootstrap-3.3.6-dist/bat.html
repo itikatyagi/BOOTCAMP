@@ -1,4 +1,6 @@
-﻿<html lang="en">
+
+      
+<html lang="en">
 <head>
   <title>REAP</title>
   <meta charset="utf-8">
@@ -17,6 +19,29 @@
   border-color: #ddd;
 }
 </style>
+<script>
+$(function() {
+  open_panel_count = 0;
+  function update_toggle_button() { 
+    $('#toggle-btn').text((open_panel_count ? "Collapse" : "Expand") + " All")
+  }
+  update_toggle_button(); // Run once on page load to text #toggle-btn
+
+  $('#toggle-btn').click(function() {
+    $('.panel-collapse').collapse(open_panel_count ? 'hide' : 'show');
+  });
+
+  $('.panel-collapse').on('shown.bs.collapse', function () {
+    open_panel_count++;
+    update_toggle_button();
+  });
+
+  $('.panel-collapse').on('hidden.bs.collapse', function () {
+    open_panel_count--;
+    update_toggle_button();
+  });
+});
+</script>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -73,11 +98,11 @@
 		    </div>
 		         
 							<div class ="col-xs-3">
-	                     <div class ="row"style="background-image:url(pointimage.png);height:100px;width:145px;">
-						<h2>2POINTS</h2>
-						          
+						<div class ="row"	style="background-image:url(pointimage.png);height:100px;width:140px;">
 					</div>
-		       </div>
+						
+		        
+                 </div>
                  </div>
              </div>
          </div>
@@ -108,12 +133,8 @@
 </div>
 </div>
 <div class="row" style="margin-bottom:10px;">
-<div class="col-xs-4 " style="margin-left:30px;margin-right:15px;">
-<input type="button" name="btn" value="REDEEM POINTS" id="submitBtn" data-toggle="panel" data-target="#confirm-submit" class="btn btn-primary" />
-</div></div>
-<div class="row" style="margin-bottom:10px;">
       <div class="col-xs-4 " style="margin-left:30px;margin-right:15px;">
-        <div class="panel panel-default" id ="confirm-submit">
+        <div class="panel panel-default">
            <div class="panel-heading">BAG</div>
              <div class="panel-body">
 		          <div class="row">
