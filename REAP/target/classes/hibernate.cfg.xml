@@ -24,6 +24,7 @@
         <mapping class="practice.Practice"/>
         <mapping class="service.Service"/>
         <mapping class="recognize.Recognize"/>
+        <mapping class="badge.Badge"/>
         
     </session-factory>
 </hibernate-configuration>

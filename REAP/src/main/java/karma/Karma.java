@@ -9,6 +9,7 @@ public class Karma {
 	@Id
 	private int karmaId;
 	private String karmaName;
+	
 	public int getKarmaId() {
 		return karmaId;
 	}

@@ -4,20 +4,33 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import initial.kitty.InitialKitty;
+import recognize.Recognize;
 
 @Entity
 public class GivingKitty {
 
 @Id @GeneratedValue
 private int givingId;
-private String senderEmail;
+
 private int typeGold;
 private int typeSilver;
 private int typeBronze;
 
+@OneToOne(cascade=CascadeType.ALL)
+@JoinColumn(name="Sender_Email")
+private Recognize recognize;
+
+
+public Recognize getRecognize() {
+	return recognize;
+}
+public void setRecognize(Recognize recognize) {
+	this.recognize = recognize;
+}
 @OneToOne(cascade=CascadeType.ALL)
 private InitialKitty initialKitty;
 
@@ -34,29 +47,30 @@ public int getGivingId() {
 public void setGivingId(int givingId) {
 	this.givingId = givingId;
 }
-public String getSenderEmail() {
-	return senderEmail;
+
+public void setTypeGold(InitialKitty initialKitty)
+{
+this.typeGold=initialKitty.getTypeGold();
 }
-public void setSenderEmail(String senderEmail) {
-	this.senderEmail = senderEmail;
+public void setTypeSilver(InitialKitty initialKitty)
+{
+this.typeSilver=initialKitty.getTypeSilver();
+}
+public void setTypeBronze(InitialKitty initialKitty)
+{
+
+this.typeBronze=initialKitty.getTypeBronze();
 }
 public int getTypeGold() {
 	return typeGold;
 }
-public void setTypeGold(int typeGold) {
-	this.typeGold = typeGold;
-}
+
 public int getTypeSilver() {
 	return typeSilver;
 }
-public void setTypeSilver(int typeSilver) {
-	this.typeSilver = typeSilver;
-}
+
 public int getTypeBronze() {
 	return typeBronze;
-}
-public void setTypeBronze(int typeBronze) {
-	this.typeBronze = typeBronze;
 }
 
 

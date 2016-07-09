@@ -4,7 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -17,7 +17,7 @@ import service.Service;
 public class User {
 
 	@Id @GeneratedValue
-	private int    id;
+	private int    userId;
 	private String password;
 	private String name;
 	private String mobileNum;
@@ -25,12 +25,15 @@ public class User {
 
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="role_Id")
 	private Role role; // many to one mapping with role tables*/
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="service_Id")
 	private Service service; // many to one mapping with service table
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="practice_Id")
 	private Practice practice;//// many to one mapping with practice tables
 	
 	public Service getService() {
@@ -59,12 +62,14 @@ public class User {
 		this.role = role;
 	}
 
-	public int getId() {
-		return id;
+
+
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public String getPassword() {

@@ -1,55 +1,95 @@
 package recognize;
 
+import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import karma.Karma;
+import user.details.User;
 
-import org.hibernate.type.DateType;
 @Entity
 public class Recognize {
 	@Id
-private int RecognizeId;
-private int Date;
-private String Reason;
-private String SenderEmail;
-private String ReceiverEmail;
-private int KarmaId;
+	@GeneratedValue
+	private int recognizeId;
+	private Date date;
+	private String reason;
+	private String receiverEmail;
 
-public int getRecognizeId() {
-	return RecognizeId;
-}
-public void setRecognizeId(int recognizeId) {
-	RecognizeId = recognizeId;
-}
-public int getDate() {
-	return Date;
-}
-public void setDate(int date) {
-	Date = date;
-}
-public String getReason() {
-	return Reason;
-}
-public void setReason(String reason) {
-	Reason = reason;
-}
-public String getSenderEmail() {
-	return SenderEmail;
-}
-public void setSenderEmail(String senderEmail) {
-	SenderEmail = senderEmail;
-}
-public String getReceiverEmail() {
-	return ReceiverEmail;
-}
-public void setReceiverEmail(String receiverEmail) {
-	ReceiverEmail = receiverEmail;
-}
-public int getKarmaId() {
-	return KarmaId;
-}
-public void setKarmaId(int karmaId) {
-	KarmaId = karmaId;
-}
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="karma_Id")
+	private Karma karma;
+	
+	public Karma getKarma() {
+		return karma;
+	}
+	
+	public void setKarma(Karma karma) {
+		this.karma = karma;
+	}
 
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="sender_Email")
+	private User user;
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	/*@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="Badge_ID")
+	private Badge badge;*/
+
+	
+
+	/*public Badge getBadge() {
+		return badge;
+	}
+
+	public void setBadge(Badge badge) {
+		this.badge = badge;
+	}*/
+
+
+	public int getRecognizeId() {
+		return recognizeId;
+	}
+
+	public void setRecognizeId(int recognizeId) {
+		this.recognizeId = recognizeId;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
+	public String getReceiverEmail() {
+		return receiverEmail;
+	}
+
+	public void setReceiverEmail(String receiverEmail) {
+		this.receiverEmail = receiverEmail;
+	}
+
+	
 
 }

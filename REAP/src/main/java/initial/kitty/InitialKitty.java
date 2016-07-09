@@ -2,7 +2,9 @@ package initial.kitty;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import role.details.Role;
@@ -10,14 +12,16 @@ import role.details.Role;
 @Entity
 public class InitialKitty {
 
-	@Id
-	private int badgeId;
+	@Id@GeneratedValue
+	private int defaultBadgeId;
 	private int typeGold;
 	private int typeSilver;
 	private int typeBronze;
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="role_Id")
 	private Role role;
+	
 	
 	
 	
@@ -27,11 +31,13 @@ public class InitialKitty {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	public int getBadgeId() {
-		return badgeId;
+	
+	
+	public int getDefaultBadgeId() {
+		return defaultBadgeId;
 	}
-	public void setBadgeId(int badgeId) {
-		this.badgeId = badgeId;
+	public void setDefaultBadgeId(int defaultBadgeId) {
+		this.defaultBadgeId = defaultBadgeId;
 	}
 	public int getTypeGold() {
 		return typeGold;

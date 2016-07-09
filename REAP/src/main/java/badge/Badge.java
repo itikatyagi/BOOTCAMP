@@ -1,19 +1,16 @@
 package badge;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-import earned.kitty.EarnedKitty;
-
+@Entity
 public class Badge {
-
+	
+    @Id@GeneratedValue
 	private int badgeId;
 	private String badgeType;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	private EarnedKitty earnedKitty;
-	
-	
+		
 	public int getBadgeId() {
 		return badgeId;
 	}
@@ -26,12 +23,7 @@ public class Badge {
 	public void setBadgeType(String badgeType) {
 		this.badgeType = badgeType;
 	}
-	public EarnedKitty getEarnedKitty() {
-		return earnedKitty;
-	}
-	public void setEarnedKitty(EarnedKitty earnedKitty) {
-		this.earnedKitty = earnedKitty;
-	}
+
 	
 	
 }
