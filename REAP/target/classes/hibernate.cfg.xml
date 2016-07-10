@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/REAPP</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">nitin</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        
+        <property name="hibernate.connection.pool_size">1</property>
+        <mapping class="user.details.User"/>
+        <mapping class="karma.Karma"/>
+        <mapping class="giving.kitty.GivingKitty"/>
+        <mapping class="initial.kitty.InitialKitty"/>
+        <mapping class="role.details.Role"/>
+        <mapping class="earned.kitty.EarnedKitty"/>
+        <mapping class="practice.Practice"/>
+        <mapping class="service.Service"/>
+        <mapping class="recognize.Recognize"/>
+        <mapping class="badge.Badge"/>
+        
+    </session-factory>
+</hibernate-configuration>

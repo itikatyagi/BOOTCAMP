@@ -1,0 +1,94 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<link rel="shortcut icon"
+	href="favicon-c06e02ee158e94e25e754cb87a2328fd.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css1/login.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login Form</title>
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="css\bootstrap.min.css">
+<link rel="stylesheet" href="css1\form-elements.css">
+</head>
+<body style="background-image: url(1.jpg)">
+
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse"
+			data-target="#myNavbar">
+			<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+				class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#"><img src="reap.png" alt="View"
+			style="width: 120px; height: 35px; margin-top: -5px"></a> <img
+			src="r.png" alt="View" class="hidden-xs"
+			style="width: 450px; height: 45px; margin-top: 5px;">
+	</div>
+	<div class="top-content">
+		<div class="inner-bg">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 text">
+						<h1>
+							<strong>LOGIN FORM</strong>
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3 form-box">
+					<div class="form-top">
+						<div class="form-top-left">
+							<h3>Login to our site</h3>
+							<p>Enter your username and password to log on:</p>
+						</div>
+						<div class="form-top-right">
+							<i class="fa fa-key"></i>
+						</div>
+					</div>
+					<div class="form-bottom">
+
+						<form name="abcForm" onsubmit="return validateForms()"
+							action="registration.html" method="post" class="form-group">
+							<div class="form-group">
+								<div class="input-group">
+									<label class="sr-only" for="form-username">Username</label> <input
+										type="text" name="form-username" placeholder="Username..."
+										class="form-username form-control" id="form-username">
+									<span class="input-group-addon"><span
+										class="glyphicon glyphicon-asterisk"></span></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<label class="sr-only" for="form-password">Password</label> <input
+										type="password" name="form-password" placeholder="Password..."
+										class="form-password form-control" id="form-password">
+									<span class="input-group-addon"><span
+										class="glyphicon glyphicon-asterisk"></span></span>
+								</div>
+							</div>
+							<button type="submit" class="btn">Sign in!</button>
+						</form>
+					</div>
+					<div class="description">
+						<p>
+							<strong>VISIT OUR WEBSITE</strong> <a
+								href="https://www.google.co.in/?gws_rd=ssl#q=to+the+new+digital "><strong>TO
+									THE NEW DIGITAL</strong></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<script src="js\jquery-1.11.1.min.js"></script>
+			<script src="js\bootstrap.min.js"></script>
+</body>
+</html>
